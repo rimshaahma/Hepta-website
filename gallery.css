@@ -1,0 +1,346 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.toggle-button {
+    position: fixed;
+   margin-left: 30px;
+   margin-top: 45px;
+   right: 30px;
+
+    font-size: 50px;
+    cursor: pointer;
+    z-index: 1000;
+    color: #111;
+}
+
+
+.navbar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #e0e9e9;
+    overflow-x: hidden;
+    transition: width 0.5s;
+    padding-top: 60px;
+    z-index: 999; /* Ensure the navbar is above other content */
+}
+
+.navbar.open {
+    width: 100%;
+}
+
+.navbar a {
+    text-align: center;
+    justify-content: center;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 22px;
+    color: rgb(20, 20, 20);
+    display: block;
+    transition: background-color 0.3s;
+    font-style: oblique;
+    font-weight: bolder;
+    font-size: 35px;
+}
+
+.navbar a:hover {
+    color: #2893bd;
+}
+@media screen and (max-width: 768px) {
+    .toggle-button {
+        margin-left: 0;
+        right: 10px;
+        top: 10px;
+        left: auto;
+    }
+
+    .navbar a {
+        font-size: 25px;
+        padding: 8px 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .toggle-button {
+        font-size: 25px;
+    }
+
+    .navbar a {
+        font-size: 20px;
+        padding: 6px 8px;
+    }}
+.closebtn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    text-decoration: none;
+    color: white;
+}
+
+
+.content {
+    padding: 20px;
+}
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url('heptaimage2.JPG') no-repeat center center/cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.logo {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    font-family: 'Hepta Slab', serif; /* Make sure to include this font */
+    font-size: 24px;
+    font-weight: bold;
+}
+.content h1{
+    font-size: 58px;
+    margin: 0;
+    font-weight: bold;
+}
+.content p{
+    
+        font-size: 35px;
+        margin: 20px 0;
+    
+}
+/* Image grid */
+
+
+.image-container img {
+    width: 280px;
+    height: 280px;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+}
+.fleximg{
+    display: flex;
+}
+.flexlarge{
+    display: flex;
+}
+.image-container.large img {
+    width: 1800px;
+    height: 500px;
+    max-width: 300px; /* Larger size for specific images */
+    display: flex;
+    gap: 30px;
+}
+/* CSS for animation */
+@keyframes slide-up {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-up {
+    animation: slide-up 1s ease forwards;
+  }
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .image-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .image-grid > .image-container:nth-child(-n+3) {
+        grid-column: span 1;
+    }
+    
+    .image-grid > .image-container:nth-child(n+4):nth-child(-n+7) {
+        grid-column: span 1;
+    }
+    
+    .image-grid > .image-container:nth-child(n+8):nth-child(-n+9) {
+        grid-column: span 2;
+    }
+    
+    .image-grid > .image-container:nth-child(n+10) {
+        grid-column: span 1;
+    }.image-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+/* Footer */
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1 1 300px;
+    margin-right: 20px;
+}
+
+.footer-section:last-child {
+    margin-right: 0;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #ccc;
+}
+
+.subscribe {
+    flex-basis: 100%;
+    margin-top: 20px;
+}
+
+.subscribe p {
+    margin-bottom: 10px;
+}
+
+.subscribe form {
+    display: flex;
+}
+
+.subscribe input[type="email"] {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+}
+
+.subscribe button {
+    padding: 10px 20px;
+    background-color: #fff;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.subscribe button:hover {
+    background-color: #ccc;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #0e0d0d;
+    margin: 20px 0;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 14px;
+    color: #111111;
+}
+
+.social-icons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+    color: #3e1186;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #151616;
+}
+
+.move-up {
+    transform: translateY(-20px); /* Move elements up by 20px */
+    transition: transform 0.9s ease; /* Add transition for smooth movement */
+}
+/* Media queries for responsive design */
+@media (min-width: 768px) {
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .image-grid > .image-container:nth-child(-n+2) {
+        grid-column: span 1;
+    }
+    
+    .image-grid > .image-container:nth-child(n+3):nth-child(-n+4) {
+        grid-column: span 1;
+    }
+    
+    .image-grid > .image-container:nth-child(n+5):nth-child(-n+6) {
+        grid-column: span 2;
+    }
+    
+    .image-grid > .image-container:nth-child(n+7) {
+        grid-column: span 1;
+    }
+}
+@media screen and (max-width: 480px) {
+    .content h1 {
+        font-size: 32px;
+    }
+    .content p {
+        font-size: 20px;
+    }
+    .footer-section {
+        flex: 1 1 100%;
+        flex-direction: column;
+    }
+    .feedback-item {
+        width: 100%;
+    }
+    .fleximg{
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .flexlarge{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
